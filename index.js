@@ -1,5 +1,5 @@
-const goudou = require("./index");
+const goudou = require("./goudou");
 
-goudou.addBlock(new Block(Date.now().toString(), { from: "Ariel", to: "Jovenel", amount: 100 }));
+goudou.addTransaction({ from: "Ariel", to: "Jovenel", amount: 100 });
 
 console.log(goudou.chain);

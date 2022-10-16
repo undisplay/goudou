@@ -43,6 +43,10 @@ class Chain {
         this.dumpChain();
     }
 
+    addTransaction(data) {
+        this.addBlock(new Block(Date.now().toString(), data));
+    }
+
     isValid(blockchain = this) {
         for (let i = 1; i < blockchain.chain.length; i++) {
             const currentBlock = blockchain.chain[i];
