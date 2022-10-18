@@ -6,7 +6,6 @@ class Chain {
     
     constructor() {
         this.chain = this.loadChain();
-        this.difficulty = 4;
     }
 
     loadChain() {
@@ -37,7 +36,7 @@ class Chain {
         block.id = this.getLastBlock().id+1;
         block.prevHash = this.getLastBlock().hash;
         block.hash = block.getHash();
-        block.mine(this.difficulty);
+        block.mine(this.getLastBlock());
         this.chain.push(Object.freeze(block));
 
         this.dumpChain();
